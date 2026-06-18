@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>noodles-ysws-submission</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body class="overflow-x-hidden bg-[#fff8f0] font-serif">
+
+    <div id="bg" class="bg-layer"></div>
+
+    <div class="slide active" id="slide-0">
+      <div class="slide-inner">
+        <img src="src/assets/intro.png" alt="" class="slide-img" />
+        <p id="desc-0" class="slide-text"></p>
+      </div>
+    </div>
+
+    <div class="slide" id="slide-1">
+      <div class="slide-inner">
+        <img src="src/assets/egg.jpeg" alt="" class="slide-img" />
+        <p id="desc-1" class="slide-text"></p>
+      </div>
+    </div>
+
+    <div class="slide" id="slide-2">
+      <div class="slide-inner">
+        <img src="src/assets/slide3.png" alt="" class="slide-img" />
+        <p id="desc-2" class="slide-text"></p>
+      </div>
+    </div>
+
+    <div class="scroll-track"></div>
+
+    <div class="progress">
+      <div class="dot active"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

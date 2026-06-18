@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.bg-layer {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: #fff8f0;
+  transition: background 0.7s ease;
+}
+
+.slide {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  padding: 2rem 1rem;
+}
+
+.slide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.slide-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 580px;
+  max-height: 100vh;
+  overflow-y: auto;
+  padding: 1rem 0.5rem;
+  gap: 1.5rem;
+}
+
+.slide-inner::-webkit-scrollbar {
+  display: none;
+}
+
+.slide-img {
+  width: min(420px, 85vw);
+  height: min(260px, 50vw);
+  object-fit: cover;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.slide-text {
+  color: #3a2a1a;
+  font-size: clamp(0.9rem, 2.5vw, 1.15rem);
+  letter-spacing: 0.02em;
+  text-align: center;
+  line-height: 1.75;
+  font-style: italic;
+}
+
+.scroll-track {
+  position: relative;
+  z-index: 10;
+  height: 300vh;
+}
+
+.progress {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 100;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.2);
+  transition: background 0.3s, transform 0.3s;
+}
+
+.dot.active {
+  background: #c04a1a;
+  transform: scale(1.4);
+}
