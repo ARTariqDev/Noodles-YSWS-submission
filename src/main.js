@@ -1,9 +1,26 @@
-
-// debug styles stuff
 const bg = document.getElementById("bg");
 bg.style.backgroundColor = "#fff8f0";
-console.log(getComputedStyle(bg).backgroundColor)
+console.log(getComputedStyle(bg).backgroundColor); // styles debug 
 
+
+const music = document.getElementById("bg-music");
+const soundToggle = document.getElementById("sound-toggle");
+let on = false;
+soundToggle.addEventListener("click", () => {
+  on = !on; 
+  if (on) {
+    music.play();
+    soundToggle.innerHTML = "🔊";
+
+  }
+
+  else {
+    music.pause();
+    soundToggle.innerHTML = "🔈";
+      soundToggle.textContent = "🔇";
+
+  }
+});
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,7 +36,6 @@ const FunFacts = [
 
 const slides = document.querySelectorAll(".slide");
 const dotsContainer = document.getElementById("progress");
-const bg = document.getElementById("bg");
 const mascot = document.getElementById("mascot");
 const mascotBubble = document.getElementById("mascot-bubble");
 

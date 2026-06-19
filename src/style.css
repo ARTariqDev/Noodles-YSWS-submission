@@ -6,11 +6,11 @@
   box-sizing: border-box;
 }
 
-.bg-layer {
-  position: fixed;
-  inset: 0;
+.bg-layer {position: fixed;
+   inset: 0;
   z-index: -1;
 }
+
 .slide {
   position: fixed;
   inset: 0;
@@ -22,7 +22,7 @@
   padding: 2rem 1rem;
 }
 
-.slide.active {
+ .slide.active {
   opacity: 1;
   pointer-events: auto;
 }
@@ -44,9 +44,9 @@
 }
 
 .slide-img {
-  width: min(420px, 85vw);
+   width: min(420px, 85vw);
   height: min(260px, 50vw);
-  object-fit: cover;
+object-fit: cover;
   border-radius: 12px;
   flex-shrink: 0;
 }
@@ -68,8 +68,8 @@
 }
 
 .slide-credit a {
-  color: #c04a1a;
-  text-decoration: underline;
+    color: #c04a1a;
+   text-decoration: underline;
 }
 
 .scroll-track {
@@ -101,7 +101,6 @@
   transform: scale(1.4);
 }
 
-
 .mascot {
   position: fixed;
   right: 2rem;
@@ -109,7 +108,7 @@
   z-index: 50;
   display: flex;
   align-items: flex-end;
-  gap:0.75rem;
+  gap: 0.75rem;
   opacity: 0;
   pointer-events: none;
 }
@@ -126,7 +125,6 @@
   -ms-border-radius: 90%;
   -o-border-radius: 90%;
 }
-
 
 .mascot-bubble {
   background: #fff;
@@ -151,4 +149,40 @@
   border-color: transparent transparent transparent #fff;
 }
 
+html, body {background: transparent;
+}
 
+
+/* this is for "trying" to make a gradient with the slides but it didnt work that well but im too tired to change it rn....... */
+.slide[data-bg="#6b4a3a"] .slide-text,
+.slide[data-bg="#1a1414"] .slide-text,
+.slide[data-bg="#4a1414"] .slide-text {
+  color: #f0e6da;
+}
+
+.slide[data-bg="#6b4a3a"] .slide-credit,
+.slide[data-bg="#1a1414"] .slide-credit,
+.slide[data-bg="#4a1414"] .slide-credit {
+  color: #c9b8a8;
+}
+
+.slide[data-bg="#4a1414"] .slide-credit a {
+  color: #e8a87c;
+}
+
+.sound-toggle {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 100;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background-color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+}
