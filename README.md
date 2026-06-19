@@ -26,11 +26,28 @@ Our mainlayout uses a slide <div> element configured like this:
 </div>
 ```
 
+Theres also a mascot (idk how to describe it) popout thing:
+
+```html
+<div id="mascot" class="mascot">
+  <img src="src/assets/graphic.jpeg" alt="" class="mascot-img" />
+  <div id="mascot-bubble" class="mascot-bubble"></div>
+</div>
+```
+
+It slides in from the right with a fun fact whenever you land on a new slide, then slides back out after a bit. Fun Facts are stored in the FunFacts array in the main.js file
+
 ### style.css
 originally I had planned to use tailwind.css but I couldnt get it ro run properly so I used regular css
-The css is pretty self explanatory with styles for the bg , slides and progress dots
+The css is pretty self explanatory with styles for the bg , slides ,progress dots and Mascot/popout
 
 
 ### main.js 
-Uses gsap code to make a top to bottom slideshow. We use a basic circular queue method here for changing current slide. NOTE: AI was used to help make the gsap animations 
+Uses gsap code to make a top to bottom slideshow. We use a basic circular queue method here for changing current slide. Scroll position gets umm 'teleported' (ig?) back near the top/bottom to fake an infinite scroll, with ScrollTrigger temporarily disabled during the jump so it doesn't get stuck
+looping on itself. NOTE: AI was used to help make the gsap animations and helped with some (not all)logic
+
+
+
+
+
 

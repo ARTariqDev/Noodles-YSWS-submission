@@ -48,33 +48,31 @@ function hideMascot() {
   gsap.to(mascot, { x: 120, opacity: 0, duration: 0.4, ease: "power2.in" });
 }
 
-function goTo(next) {
-  next = ((next % slides.length) + slides.length) % slides.length;
-  if (next === current || animating) return;
-  animating = true;
+function goTo(index ) {
+  index = ((index % slides.length) + slides.length) % slides.length; // wrap around with mod logic/circular queue stuff
+  if (index === current || animating) return;
 
-  const oldSlide = slides[current];
-  const newSlide = slides[next];
+  const old = slides[current];
+  const New = slides[index];
 
-  bg.style.background = newSlide.dataset.bg || "#fff8f0";
   dots[current].classList.remove("active");
-  dots[next].classList.add("active");
+  dots[index].classList.add("active");
 
-  newSlide.classList.add("active");
-
-  showMascot(next);
-
-  gsap.timeline({
+  New.classList.add('active');
+  showMascot(index);
+  
+   gsap.timeline({
     onComplete: () => {
-      oldSlide.classList.remove("active");
+      old.classList.remove("active");
       animating = false;
       gsap.delayedCall(1.4, hideMascot);
     },
   })
-    .to(oldSlide, { opacity: 0, duration: 0.3 }, 0)
-    .fromTo(newSlide, { opacity: 0 }, { opacity: 1, duration: 0.4 }, 0.2);
+    .to(old, { opacity: 0, duration: 0.3 }, 0)
+    .call(() => { bg.style.background = const name = new type(arguments);.dataset.bg || "#fff8f0"; }, null, 0.15)
+    .fromTo(New, { opacity: 0 }, { opacity: 1, duration: 0.4 }, 0.2);
 
-  current = next;
+  current = index;
 }
 
 let st;
