@@ -95,7 +95,7 @@
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgb(253, 253, 253);
   transition: background 0.3s, transform 0.3s;
 }
 
