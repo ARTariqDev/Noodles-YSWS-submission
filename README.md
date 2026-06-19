@@ -46,8 +46,3 @@ The css is pretty self explanatory with styles for the bg , slides ,progress dot
 Uses gsap code to make a top to bottom slideshow. We use a basic circular queue method here for changing current slide. Scroll position gets umm 'teleported' (ig?) back near the top/bottom to fake an infinite scroll, with ScrollTrigger temporarily disabled during the jump so it doesn't get stuck
 looping on itself. NOTE: AI was used to help make the gsap animations and helped with some (not all)logic
 
-
-
-
-
-

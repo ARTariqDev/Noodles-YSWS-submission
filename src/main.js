@@ -48,9 +48,10 @@ function hideMascot() {
   gsap.to(mascot, { x: 120, opacity: 0, duration: 0.4, ease: "power2.in" });
 }
 
-function goTo(index ) {
-  index = ((index % slides.length) + slides.length) % slides.length; // wrap around with mod logic/circular queue stuff
+function goTo(index) {
+  index = ((index % slides.length) + slides.length) % slides.length; // wrap around with mod logic/circular queue stuff ig
   if (index === current || animating) return;
+  animating = true;
 
   const old = slides[current];
   const New = slides[index];
@@ -60,8 +61,8 @@ function goTo(index ) {
 
   New.classList.add('active');
   showMascot(index);
-  
-   gsap.timeline({
+
+  gsap.timeline({
     onComplete: () => {
       old.classList.remove("active");
       animating = false;
@@ -69,7 +70,7 @@ function goTo(index ) {
     },
   })
     .to(old, { opacity: 0, duration: 0.3 }, 0)
-    .call(() => { bg.style.background = const name = new type(arguments);.dataset.bg || "#fff8f0"; }, null, 0.15)
+    .to(bg, { backgroundColor: New.dataset.bg || "#fff8f0", duration: 0.6, ease: "power1.inOut" }, 0.15)
     .fromTo(New, { opacity: 0 }, { opacity: 1, duration: 0.4 }, 0.2);
 
   current = index;

@@ -6,12 +6,12 @@
   box-sizing: border-box;
 }
 
+
 .bg-layer {
   position: fixed;
   inset: 0;
   z-index: -1;
-  background: #fff8f0;
-  transition: background 0.7s ease;
+  background-color: #fff8f0;
 }
 
 .slide {
@@ -153,3 +153,5 @@
   border-style: solid;
   border-color: transparent transparent transparent #fff;
 }
+
+
