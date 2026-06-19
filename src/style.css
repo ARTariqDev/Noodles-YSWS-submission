@@ -6,14 +6,11 @@
   box-sizing: border-box;
 }
 
-
 .bg-layer {
   position: fixed;
   inset: 0;
   z-index: -1;
-  background-color: #fff8f0;
 }
-
 .slide {
   position: fixed;
   inset: 0;

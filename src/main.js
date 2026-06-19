@@ -1,3 +1,10 @@
+
+// debug styles stuff
+const bg = document.getElementById("bg");
+bg.style.backgroundColor = "#fff8f0";
+console.log(getComputedStyle(bg).backgroundColor)
+
+
 gsap.registerPlugin(ScrollTrigger);
 
 const FunFacts = [
