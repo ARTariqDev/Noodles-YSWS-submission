@@ -44,5 +44,28 @@ The css is pretty self explanatory with styles for the bg , slides ,progress dot
 
 ### main.js 
 Uses gsap code to make a top to bottom slideshow. We use a basic circular queue method here for changing current slide. Scroll position gets umm 'teleported' (ig?) back near the top/bottom to fake an infinite scroll, with ScrollTrigger temporarily disabled during the jump so it doesn't get stuck
-looping on itself. NOTE: AI was used to help make the gsap animations and helped with some (not all)logic
+looping on itself. As for the Audio/bg musics, we utalize the <audio> element from the index.html file then do the following make a simple toggle button using boolean logic:
+
+```Javascript
+const music = document.getElementById("bg-music");
+const soundToggle = document.getElementById("sound-toggle");
+let on = false;
+soundToggle.addEventListener("click", () => {
+  on = !on; 
+  if (on) {
+    music.play();
+    soundToggle.innerHTML = "🔊";
+
+  }
+
+  else {
+    music.pause();
+    soundToggle.innerHTML = "🔈";
+      soundToggle.textContent = "🔇";
+
+  }
+});
+```
+
+#### NOTE: AI was used to help make the gsap animations and helped with some (not all) logic. NO CONTENT IN THIS README WAS MADE WITH AI
 

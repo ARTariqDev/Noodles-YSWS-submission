@@ -1,6 +1,6 @@
 const bg = document.getElementById("bg");
 bg.style.backgroundColor = "#fff8f0";
-console.log(getComputedStyle(bg).backgroundColor); // styles debug 
+console.log(getComputedStyle(bg).backgroundColor); // styles debug stuff
 
 
 const music = document.getElementById("bg-music");
@@ -79,6 +79,17 @@ function goTo(index) {
   const old = slides[current];
   const New = slides[index];
 
+  //for keyboard support
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowDown") {
+      goTo (current +1); // moves to next index (and slide) 
+    }
+    else if (e.key === "ArrowUp") {
+      goTo(current-1); //moves to previous index (andslide)
+
+    }
+  })
+
   dots[current].classList.remove("active");
   dots[index].classList.add("active");
 
@@ -130,3 +141,5 @@ function wrapTo(scrollY) {
     wrapping = false;
   });
 }
+
+
